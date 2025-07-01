@@ -54,13 +54,14 @@ subprojects {
 
     mavenPublishing {
 
-        signing {
-            val signingKey: String? by project
-            val signingPassword: String? by project
-            useInMemoryPgpKeys(signingKey, signingPassword)
-        }
-
         configure<PublishingExtension> {
+            signing {
+                val signingKey: String? by project
+                val signingPassword: String? by project
+                useInMemoryPgpKeys(signingKey, signingPassword)
+                sign(publishing.publications)
+            }
+
             publishToMavenCentral(automaticRelease = false)
 
             coordinates("org.http4k.test", project.name, project.properties["releaseVersion"]?.toString() ?: "LOCAL")
