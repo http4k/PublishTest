@@ -1,0 +1,12 @@
+.idea/
+*.iml
+.gradle
+.kotlin
+.http4k
+build/
+.DS_Store
+classes/
+/site/
+out/
+store/
+**/CLAUDE.md
