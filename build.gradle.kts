@@ -54,7 +54,8 @@ allprojects {
         configure<PublishingExtension> {
             publishToMavenCentral(automaticRelease = true)
 
-            coordinates("com.example.mylibrary", "mylibrary-runtime", "1.0.3-SNAPSHOT")
+
+            coordinates("org.http4k.test", project.name, project.properties["releaseVersion"]?.toString() ?: "LOCAL")
             pom {
                 val archivesBaseName = tasks.jar.get().archiveBaseName.get()
                 withXml {
