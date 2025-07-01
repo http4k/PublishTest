@@ -6,6 +6,7 @@ import org.jetbrains.kotlin.gradle.tasks.KotlinJvmCompile
 
 plugins {
     kotlin("jvm") version "2.2.0"
+    signing
     id("com.vanniktech.maven.publish") version "0.33.0"
 }
 
@@ -49,12 +50,21 @@ subprojects {
 
     apply(plugin = "org.jetbrains.kotlin.jvm")
     apply(plugin = "com.vanniktech.maven.publish")
+    apply(plugin = "signing")
 
     mavenPublishing {
+
+        signing {
+            val signingKey: String? by project
+            val signingPassword: String? by project
+            useInMemoryPgpKeys(signingKey, signingPassword)
+        }
+
         configure<PublishingExtension> {
             publishToMavenCentral(automaticRelease = false)
 
             coordinates("org.http4k.test", project.name, project.properties["releaseVersion"]?.toString() ?: "LOCAL")
+
             pom {
                 withXml {
                     asNode().appendNode("name", project.name)
