@@ -42,7 +42,7 @@ tasks {
     }
 }
 
-allprojects {
+subprojects {
     repositories {
         mavenCentral()
     }
