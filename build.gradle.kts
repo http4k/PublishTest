@@ -59,7 +59,7 @@ allprojects {
                 withXml {
                     asNode().appendNode("name", project.name)
                     asNode().appendNode("description", project.description)
-                    asNode().appendNode("url", "https://http4k.dev")
+                    asNode().appendNode("url", "https://http4k.org")
                     asNode().appendNode("developers")
                         .appendNode("developer").appendNode("name", "David Denton").parent()
                         .appendNode("email", "david@http4k.org")
