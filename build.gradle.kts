@@ -58,7 +58,7 @@ allprojects {
             pom {
                 withXml {
                     asNode().appendNode("name", project.name)
-                    asNode().appendNode("description", description)
+                    asNode().appendNode("description", project.description)
                     asNode().appendNode("url", "https://http4k.dev")
                     asNode().appendNode("developers")
                         .appendNode("developer").appendNode("name", "David Denton").parent()
