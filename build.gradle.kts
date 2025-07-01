@@ -52,8 +52,7 @@ allprojects {
 
     mavenPublishing {
         configure<PublishingExtension> {
-            publishToMavenCentral(automaticRelease = true)
-
+            publishToMavenCentral(automaticRelease = false)
 
             coordinates("org.http4k.test", project.name, project.properties["releaseVersion"]?.toString() ?: "LOCAL")
             pom {
