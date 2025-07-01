@@ -1,4 +1,4 @@
 dependencies {
-    api(project(":test-module1"))
+    implementation(project(":test-module1"))
 }
 

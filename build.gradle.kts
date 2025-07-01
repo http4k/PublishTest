@@ -56,9 +56,8 @@ allprojects {
 
             coordinates("org.http4k.test", project.name, project.properties["releaseVersion"]?.toString() ?: "LOCAL")
             pom {
-                val archivesBaseName = tasks.jar.get().archiveBaseName.get()
                 withXml {
-                    asNode().appendNode("name", archivesBaseName)
+                    asNode().appendNode("name", project.name)
                     asNode().appendNode("description", description)
                     asNode().appendNode("url", "https://http4k.dev")
                     asNode().appendNode("developers")
