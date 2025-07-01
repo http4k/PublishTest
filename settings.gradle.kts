@@ -1,4 +1,4 @@
-rootProject.name = "HelloWorld"
+rootProject.name = "PublishTest"
 
 include("bom")
 include("test-module1")

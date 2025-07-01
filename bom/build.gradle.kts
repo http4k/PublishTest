@@ -1,7 +1,4 @@
 dependencies {
-    constraints {
-        rootProject.subprojects
-            .toList()
-            .forEach { api(it) }
-    }
+    api(project(":test-module1"))
+    api(project(":test-module2"))
 }
